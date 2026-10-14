@@ -1,0 +1,182 @@
+/* ---------- Global reset and page layout ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e8eef9, #f6f8fc);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+  color: #1f2937;
+}
+
+/* ---------- Card container ---------- */
+.container {
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 32px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.12);
+  border-top: 5px solid #1e3a8a;
+}
+
+h1 {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 1.7rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin: 4px 0 22px;
+  font-size: 0.9rem;
+}
+
+/* ---------- Form controls ---------- */
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.92rem;
+}
+
+.req {
+  color: #dc2626;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #f9fafb;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+/* ---------- Validation states (classes toggled by script.js) ---------- */
+input.invalid,
+select.invalid {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+input.valid,
+select.valid {
+  border-color: #16a34a;
+}
+
+.error {
+  display: block;
+  color: #dc2626;
+  font-size: 0.8rem;
+  min-height: 1em;
+  margin-top: 4px;
+}
+
+.hint {
+  display: block;
+  color: #6b7280;
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+/* ---------- Password strength meter ---------- */
+.strength-bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+#strengthFill {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s, background 0.3s;
+}
+
+.strength-text {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* ---------- Buttons ---------- */
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn {
+  flex: 1;
+  padding: 11px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+}
+
+/* ---------- Success message ---------- */
+.success {
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #dcfce7;
+  border: 1px solid #16a34a;
+  color: #166534;
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 22px 18px;
+  }
+}

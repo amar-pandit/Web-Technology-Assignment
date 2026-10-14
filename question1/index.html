@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Registration Form</h1>
+    <p class="subtitle">KPR Institute of Engineering and Technology</p>
+
+    <!-- novalidate: browser's default popups are disabled; script.js validates -->
+    <form id="registrationForm" novalidate>
+
+      <!-- Student name -->
+      <div class="form-group">
+        <label for="studentName">Student Name <span class="req">*</span></label>
+        <input type="text" id="studentName" name="studentName" placeholder="Enter full name">
+        <small class="error" id="studentNameError"></small>
+      </div>
+
+      <!-- Roll number -->
+      <div class="form-group">
+        <label for="rollNumber">Roll Number <span class="req">*</span></label>
+        <input type="text" id="rollNumber" name="rollNumber" placeholder="e.g. 24CS255">
+        <small class="error" id="rollNumberError"></small>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="name@example.com">
+        <small class="error" id="emailError"></small>
+      </div>
+
+      <!-- Course -->
+      <div class="form-group">
+        <label for="course">Course <span class="req">*</span></label>
+        <select id="course" name="course">
+          <option value="">-- Select Course --</option>
+          <option value="CSE">B.E. Computer Science and Engineering</option>
+          <option value="IT">B.Tech Information Technology</option>
+          <option value="ECE">B.E. Electronics and Communication</option>
+          <option value="EEE">B.E. Electrical and Electronics</option>
+          <option value="MECH">B.E. Mechanical Engineering</option>
+        </select>
+        <small class="error" id="courseError"></small>
+      </div>
+
+      <!-- Password with strength meter -->
+      <div class="form-group">
+        <label for="password">Password <span class="req">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Min 8 chars, upper, lower, digit, symbol">
+        <div class="strength-bar"><div id="strengthFill"></div></div>
+        <small id="strengthText" class="strength-text"></small>
+        <small class="error" id="passwordError"></small>
+      </div>
+
+      <!-- Confirm password -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password <span class="req">*</span></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password">
+        <small class="error" id="confirmPasswordError"></small>
+      </div>
+
+      <!-- File upload -->
+      <div class="form-group">
+        <label for="fileUpload">Upload Photo / Document <span class="req">*</span></label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".jpg,.jpeg,.png,.pdf">
+        <small class="hint">Allowed: JPG, PNG, PDF. Maximum size 2 MB.</small>
+        <small class="error" id="fileUploadError"></small>
+      </div>
+
+      <div class="button-row">
+        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="reset" class="btn btn-secondary" id="resetBtn">Reset</button>
+      </div>
+
+      <div id="successMessage" class="success" hidden></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
